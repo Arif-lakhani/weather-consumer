@@ -1,0 +1,22 @@
+package com.egen.consumerWeatherApp.model;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class SQSMessage {
+    @JsonProperty("Type")
+    private  String type;
+
+    @JsonProperty("Message")
+    private String message;
+
+    @JsonProperty("MessageId")
+    private String messageId;
+}
